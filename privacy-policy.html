@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – Jackpot Dice: Roll & Score</title>
+    <meta name="description" content="Privacy Policy for Jackpot Dice: Roll & Score by HexLume Games">
+    <style>
+        /* ── Design Tokens ─────────────────────────────────────────── */
+        :root {
+            --bg-deep:    #07070f;
+            --bg-card:    #10102050;
+            --bg-card2:   #1a1a2e;
+            --border:     rgba(245, 200, 66, 0.15);
+            --border-dim: rgba(255,255,255,0.06);
+            --gold:       #f5c842;
+            --amber:      #ff9f1c;
+            --cyan:       #00e5ff;
+            --muted-cyan: rgba(0,229,255,0.12);
+            --green:      #00e676;
+            --text-primary:   #ededff;
+            --text-secondary: #9898b8;
+            --text-muted:     #4e4e74;
+            --radius:  12px;
+            --radius-lg: 20px;
+            --font-display: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+            --font-body:    'Barlow', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        /* ── Reset ─────────────────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* ── Base ──────────────────────────────────────────────────── */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.75;
+            min-height: 100vh;
+        }
+
+        /* ── Typography ────────────────────────────────────────────── */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            letter-spacing: 0.03em;
+        }
+
+        /* ── Layout ────────────────────────────────────────────────── */
+        .page-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        /* ── Hero ──────────────────────────────────────────────────── */
+        .hero {
+            text-align: center;
+            padding: 56px 20px 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245,200,66,0.1);
+            border: 1px solid rgba(245,200,66,0.3);
+            border-radius: 999px;
+            padding: 5px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .hero-badge::before {
+            content: "🎲";
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(26px, 5vw, 40px);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .meta-item {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .meta-item strong {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 2px;
+        }
+
+        /* ── TOC ───────────────────────────────────────────────────── */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-left: 3px solid var(--gold);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .toc ol {
+            padding-left: 18px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 32px;
+        }
+
+        @media (max-width: 560px) {
+            .toc ol { grid-template-columns: 1fr; }
+        }
+
+        .toc li {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .toc a:hover { color: var(--gold); }
+
+        /* ── Sections ──────────────────────────────────────────────── */
+        .section {
+            margin-bottom: 52px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-dim);
+        }
+
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            border-radius: 50%;
+            background: rgba(245,200,66,0.12);
+            border: 1px solid rgba(245,200,66,0.3);
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .section h2 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* ── Prose ─────────────────────────────────────────────────── */
+        .section p {
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        /* ── Cards ─────────────────────────────────────────────────── */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: var(--radius);
+            padding: 20px 22px;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title .icon {
+            font-size: 16px;
+        }
+
+        .card p {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* ── Data Table ────────────────────────────────────────────── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            margin: 12px 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .data-table thead tr {
+            background: rgba(245,200,66,0.08);
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 10px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-dim);
+            vertical-align: top;
+        }
+
+        .data-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tbody tr {
+            background: var(--bg-card);
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: rgba(255,255,255,0.015);
+        }
+
+        /* ── Highlight Boxes ───────────────────────────────────────── */
+        .highlight {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 16px 20px;
+            border-radius: var(--radius);
+            margin: 16px 0;
+            font-size: 13.5px;
+        }
+
+        .highlight-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .highlight-body {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .highlight-body strong { color: var(--text-primary); }
+
+        .highlight.gold {
+            background: rgba(245,200,66,0.07);
+            border: 1px solid rgba(245,200,66,0.2);
+        }
+
+        .highlight.green {
+            background: rgba(0,230,118,0.06);
+            border: 1px solid rgba(0,230,118,0.2);
+        }
+
+        .highlight.amber {
+            background: rgba(255,159,28,0.07);
+            border: 1px solid rgba(255,159,28,0.2);
+        }
+
+        .highlight.cyan {
+            background: rgba(0,229,255,0.06);
+            border: 1px solid rgba(0,229,255,0.2);
+        }
+
+        /* ── List ──────────────────────────────────────────────────── */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .styled-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 5px 0;
+            border-bottom: 1px solid var(--border-dim);
+        }
+
+        .styled-list li:last-child { border-bottom: none; }
+
+        .styled-list li::before {
+            content: "▸";
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── Third-Party Card ──────────────────────────────────────── */
+        .tp-card {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin-bottom: 12px;
+        }
+
+        .tp-logo {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .tp-info h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .tp-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 6px !important;
+        }
+
+        .tp-link {
+            font-size: 12px;
+            color: var(--cyan);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .tp-link:hover { text-decoration: underline; }
+
+        /* ── Rights Grid ───────────────────────────────────────────── */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 14px 0;
+        }
+
+        @media (max-width: 500px) {
+            .rights-grid { grid-template-columns: 1fr; }
+        }
+
+        .right-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: var(--radius);
+            padding: 14px 16px;
+        }
+
+        .right-item .right-icon {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .right-item .right-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .right-item p {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            margin: 0 !important;
+        }
+
+        /* ── Contact Box ───────────────────────────────────────────── */
+        .contact-box {
+            background: linear-gradient(135deg, rgba(245,200,66,0.07), rgba(255,159,28,0.05));
+            border: 1px solid rgba(245,200,66,0.25);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .contact-box .contact-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .contact-email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: #000;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 12px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: opacity 0.15s, transform 0.1s;
+            letter-spacing: 0.02em;
+        }
+
+        .contact-email-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        /* ── Footer ────────────────────────────────────────────────── */
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-dim);
+            margin-top: 48px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* ── Divider ───────────────────────────────────────────────── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border), transparent);
+            margin: 40px 0;
+        }
+
+        /* ── Responsive ────────────────────────────────────────────── */
+        @media (max-width: 600px) {
+            .hero { padding: 40px 16px 32px; }
+            .toc { padding: 20px; }
+            .section { margin-bottom: 40px; }
+            .contact-box { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+    <!-- ── HERO ─────────────────────────────────────────────────────── -->
+    <header class="hero">
+        <div class="hero-badge">HexLume Games</div>
+        <h1>Privacy <span>Policy</span></h1>
+        <p class="hero-sub">Jackpot Dice: Roll &amp; Score · com.hexlumegames.jackpotdice</p>
+        <div class="hero-meta">
+            <div class="meta-item">
+                <strong>Effective Date</strong>
+                June 15, 2026
+            </div>
+            <div class="meta-item">
+                <strong>Last Updated</strong>
+                June 15, 2026
+            </div>
+            <div class="meta-item">
+                <strong>Platform</strong>
+                Android (Google Play)
+            </div>
+        </div>
+    </header>
+
+    <!-- ── INTRO ─────────────────────────────────────────────────────── -->
+    <div class="highlight gold" style="margin-bottom:36px;">
+        <span class="highlight-icon">🔒</span>
+        <div class="highlight-body">
+            <strong>Your privacy matters to us.</strong> HexLume Games does not collect, store, or transmit any personally identifiable information from you to our servers. All game data is stored exclusively on your device. This policy explains what data third-party services (such as Google AdMob) may collect, and how you can control it.
+        </div>
+    </div>
+
+    <!-- ── TABLE OF CONTENTS ─────────────────────────────────────────── -->
+    <nav class="toc" aria-label="Table of Contents">
+        <div class="toc-title">📋 Table of Contents</div>
+        <ol>
+            <li><a href="#s1">About This Policy</a></li>
+            <li><a href="#s2">Data We Do Not Collect</a></li>
+            <li><a href="#s3">Data Stored on Your Device</a></li>
+            <li><a href="#s4">Advertising &amp; Third-Party SDKs</a></li>
+            <li><a href="#s5">Third-Party Services</a></li>
+            <li><a href="#s6">Data Sharing</a></li>
+            <li><a href="#s7">Children's Privacy</a></li>
+            <li><a href="#s8">Your Privacy Rights</a></li>
+            <li><a href="#s9">Security</a></li>
+            <li><a href="#s10">Changes to This Policy</a></li>
+            <li><a href="#s11">Contact Us</a></li>
+        </ol>
+    </nav>
+
+    <!-- ── SECTION 1 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s1">
+        <div class="section-header">
+            <div class="section-num">1</div>
+            <h2>About This Policy</h2>
+        </div>
+        <p>
+            This Privacy Policy applies to the mobile application <strong>Jackpot Dice: Roll &amp; Score</strong> (package name: <strong>com.hexlumegames.jackpotdice</strong>), developed and published by <strong>HexLume Games</strong>. By downloading, installing, or playing the game, you acknowledge that you have read and understood this Privacy Policy.
+        </p>
+        <p>
+            This policy is designed to comply with applicable privacy laws and regulations, including the <strong>EU General Data Protection Regulation (GDPR)</strong>, the <strong>California Consumer Privacy Act (CCPA)</strong>, the <strong>Children's Online Privacy Protection Act (COPPA)</strong>, and <strong>Google Play Store policies</strong>.
+        </p>
+        <p>
+            This policy applies exclusively to Jackpot Dice: Roll &amp; Score and does not cover any third-party websites or services that may be linked from within the application.
+        </p>
+    </section>
+
+    <!-- ── SECTION 2 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s2">
+        <div class="section-header">
+            <div class="section-num">2</div>
+            <h2>Data We Do Not Collect</h2>
+        </div>
+        <p>
+            HexLume Games does <strong>not</strong> operate any backend servers for this game. We do not collect, process, store, or have access to any of the following:
+        </p>
+        <ul class="styled-list">
+            <li>Your name, email address, or any other contact information</li>
+            <li>Your location, GPS coordinates, or IP address</li>
+            <li>Your device's contact list, camera, microphone, or photos</li>
+            <li>Login credentials or account information</li>
+            <li>Payment or financial information</li>
+            <li>Your gameplay data, scores, or statistics (these exist only on your device)</li>
+            <li>Any biometric data</li>
+        </ul>
+
+        <div class="highlight green" style="margin-top:18px;">
+            <span class="highlight-icon">✅</span>
+            <div class="highlight-body">
+                <strong>No user account is required.</strong> You can play Jackpot Dice anonymously with no sign-up of any kind.
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION 3 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s3">
+        <div class="section-header">
+            <div class="section-num">3</div>
+            <h2>Data Stored on Your Device</h2>
+        </div>
+        <p>
+            To provide a seamless gameplay experience, Jackpot Dice stores certain data locally on your device using your browser's <strong>localStorage</strong> mechanism within the Capacitor WebView. This data <strong>never leaves your device</strong> and is inaccessible to HexLume Games.
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data Key</th>
+                    <th>What It Stores</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>jd_best</code></td>
+                    <td>Your all-time highest score</td>
+                    <td>Display personal best on home screen</td>
+                </tr>
+                <tr>
+                    <td><code>jd_stats</code></td>
+                    <td>Total games played, average score, jackpot count, bonus count, last 5 game scores</td>
+                    <td>Show statistics screen</td>
+                </tr>
+                <tr>
+                    <td><code>jd_settings</code></td>
+                    <td>Vibration, confetti, notification badge, and sound effect preferences</td>
+                    <td>Remember your in-game settings</td>
+                </tr>
+                <tr>
+                    <td><code>jd_daily</code></td>
+                    <td>Current daily challenge progress, completion status, and streak count</td>
+                    <td>Track daily challenges and streaks</td>
+                </tr>
+                <tr>
+                    <td><code>jd_joker_count</code></td>
+                    <td>Number of earned extra-roll jokers</td>
+                    <td>Preserve reward between sessions</td>
+                </tr>
+                <tr>
+                    <td><code>jd_paused_game</code></td>
+                    <td>Full game state at the moment of pausing</td>
+                    <td>Allow resuming an unfinished game</td>
+                </tr>
+                <tr>
+                    <td><code>jd_lang</code></td>
+                    <td>Your chosen display language code (e.g., "en", "tr")</td>
+                    <td>Remember language preference</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top:14px;">
+            You can delete all of this data at any time by using the <strong>"Reset Statistics"</strong> option in the Settings menu, or by uninstalling the application.
+        </p>
+
+        <div class="highlight amber">
+            <span class="highlight-icon">📱</span>
+            <div class="highlight-body">
+                <strong>Permissions:</strong> Jackpot Dice requests only the minimum Android permissions necessary. The game uses the <strong>VIBRATE</strong> permission to provide haptic feedback during dice rolls (optional, can be disabled in settings), and the <strong>INTERNET</strong> permission solely to load advertisements. No other sensitive permissions are requested.
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION 4 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s4">
+        <div class="section-header">
+            <div class="section-num">4</div>
+            <h2>Advertising &amp; Third-Party SDKs</h2>
+        </div>
+        <p>
+            Jackpot Dice is a free-to-play game supported by advertisements served through <strong>Google AdMob</strong>. The game displays three types of ads:
+        </p>
+        <ul class="styled-list">
+            <li><strong>Banner ads</strong> — displayed at the bottom of the screen during gameplay</li>
+            <li><strong>Interstitial ads</strong> — full-screen ads shown between game sessions</li>
+            <li><strong>Rewarded video ads</strong> — optional ads you can choose to watch in exchange for an extra dice roll</li>
+        </ul>
+
+        <p style="margin-top:16px;">
+            To serve relevant advertisements, Google AdMob may automatically collect certain device information. This data is collected and processed by Google, not by HexLume Games. The types of data AdMob may collect include:
+        </p>
+
+        <div class="card">
+            <div class="card-title"><span class="icon">🆔</span> Advertising Identifiers</div>
+            <p>Google Advertising ID (GAID) — a resettable, anonymous identifier used for ad personalization. You can reset or opt out of personalized ads at any time in your Android settings under <em>Google → Ads</em>.</p>
+        </div>
+        <div class="card">
+            <div class="card-title"><span class="icon">📡</span> Network Information</div>
+            <p>IP address (used for approximate geolocation for ad targeting), connection type, and device network status.</p>
+        </div>
+        <div class="card">
+            <div class="card-title"><span class="icon">📲</span> Device Information</div>
+            <p>Device model, operating system version, screen resolution, language, and time zone — used to serve compatible ad formats.</p>
+        </div>
+        <div class="card">
+            <div class="card-title"><span class="icon">📊</span> Ad Interaction Data</div>
+            <p>Whether an ad was shown, viewed, or clicked. This data is used by Google to measure ad performance and improve ad relevance.</p>
+        </div>
+
+        <div class="highlight cyan" style="margin-top:20px;">
+            <span class="highlight-icon">⚙️</span>
+            <div class="highlight-body">
+                <strong>Opt Out of Personalized Ads:</strong> You can opt out of interest-based advertising at any time by opening your Android device's <em>Settings → Google → Ads → Opt out of Ads Personalization</em>. Ads may still be displayed, but they will not be personalized to your interests.
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION 5 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s5">
+        <div class="section-header">
+            <div class="section-num">5</div>
+            <h2>Third-Party Services</h2>
+        </div>
+        <p>
+            The following third-party services are integrated into Jackpot Dice. Each has its own privacy policy governing how they collect and process data.
+        </p>
+
+        <div class="tp-card">
+            <div class="tp-logo">📣</div>
+            <div class="tp-info">
+                <h3>Google AdMob</h3>
+                <p>Advertising platform that serves banner, interstitial, and rewarded ads. AdMob may collect advertising identifiers, device information, and usage data to serve and measure advertisements.</p>
+                <a class="tp-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a><br>
+                <a class="tp-link" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">AdMob Data Collection FAQ →</a>
+            </div>
+        </div>
+
+        <div class="tp-card">
+            <div class="tp-logo">🔤</div>
+            <div class="tp-info">
+                <h3>Google Fonts</h3>
+                <p>Used to load the Exo 2 and Barlow typefaces for in-game typography. When fonts are requested, Google may log the request including the requesting IP address. Font files may be served from Google's CDN.</p>
+                <a class="tp-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>
+            </div>
+        </div>
+
+        <div class="tp-card">
+            <div class="tp-logo">⚡</div>
+            <div class="tp-info">
+                <h3>Capacitor (by Ionic)</h3>
+                <p>Open-source runtime used to package the web-based game as a native Android application. Capacitor itself does not collect any user data.</p>
+                <a class="tp-link" href="https://capacitorjs.com/docs/privacy" target="_blank" rel="noopener noreferrer">capacitorjs.com/docs/privacy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION 6 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s6">
+        <div class="section-header">
+            <div class="section-num">6</div>
+            <h2>Data Sharing</h2>
+        </div>
+        <p>
+            HexLume Games does not sell, trade, or rent any personal information — because we do not collect any. The only data sharing that occurs is between your device and Google's advertising infrastructure as described in Section 4.
+        </p>
+        <p>
+            We may disclose information if required to do so by law, or in the good-faith belief that such action is necessary to comply with applicable legal obligations, protect the rights or property of HexLume Games, or prevent harm to users or the public.
+        </p>
+
+        <div class="highlight gold">
+            <span class="highlight-icon">💰</span>
+            <div class="highlight-body">
+                <strong>We do not sell your data.</strong> HexLume Games has not sold, and does not sell, personal information to any third party, as defined under the CCPA or any other applicable privacy regulation.
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION 7 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s7">
+        <div class="section-header">
+            <div class="section-num">7</div>
+            <h2>Children's Privacy</h2>
+        </div>
+        <p>
+            Jackpot Dice: Roll &amp; Score is intended for users aged <strong>13 and older</strong> (or the minimum age required by applicable law in your country). The game is <strong>not directed at children under the age of 13</strong>.
+        </p>
+        <p>
+            We do not knowingly collect personal information from children under 13. Because the game is supported by Google AdMob, which may use the Advertising ID for ad personalization, we have not designated this app as a child-directed application under COPPA. Google Play's content rating for this application reflects this age restriction.
+        </p>
+        <p>
+            If you are a parent or guardian and believe that your child under the age of 13 has used the application, please contact us at <a href="mailto:hexlume.games@gmail.com" style="color:var(--gold);">hexlume.games@gmail.com</a>. We will take appropriate steps to ensure that any locally stored data is removed and that the device's advertising identifier is not used for targeted advertising.
+        </p>
+
+        <div class="highlight amber">
+            <span class="highlight-icon">👨‍👧</span>
+            <div class="highlight-body">
+                <strong>Parental controls:</strong> If you wish to prevent children from accessing this application, we recommend using Android's <em>Parental Controls</em> features or Google Play's <em>Family Link</em> service to restrict app usage.
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SECTION 8 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s8">
+        <div class="section-header">
+            <div class="section-num">8</div>
+            <h2>Your Privacy Rights</h2>
+        </div>
+        <p>
+            Depending on your location, you may have certain rights regarding your personal data. Because HexLume Games does not collect personal data directly, most of these rights apply to the data held by our third-party partner, Google AdMob.
+        </p>
+
+        <div class="rights-grid">
+            <div class="right-item">
+                <div class="right-icon">👁️</div>
+                <div class="right-title">Right to Access</div>
+                <p>Request information about what data has been collected about you.</p>
+            </div>
+            <div class="right-item">
+                <div class="right-icon">🗑️</div>
+                <div class="right-title">Right to Deletion</div>
+                <p>Request erasure of your personal data. Local game data can be deleted by resetting statistics in-app or uninstalling the app.</p>
+            </div>
+            <div class="right-item">
+                <div class="right-icon">🚫</div>
+                <div class="right-title">Right to Opt Out</div>
+                <p>Opt out of interest-based advertising via Android device settings: <em>Google → Ads → Opt out of Ads Personalization</em>.</p>
+            </div>
+            <div class="right-item">
+                <div class="right-icon">✏️</div>
+                <div class="right-title">Right to Correction</div>
+                <p>Request correction of inaccurate personal data held by third parties.</p>
+            </div>
+            <div class="right-item">
+                <div class="right-icon">📦</div>
+                <div class="right-title">Right to Portability</div>
+                <p>Request a copy of your data in a portable format (applies to data held by Google).</p>
+            </div>
+            <div class="right-item">
+                <div class="right-icon">⛔</div>
+                <div class="right-title">Right to Object</div>
+                <p>Object to data processing for targeted advertising purposes.</p>
+            </div>
+        </div>
+
+        <p style="margin-top:18px;"><strong style="color:var(--text-primary);">For EU / EEA Residents (GDPR):</strong> You have enhanced rights under the General Data Protection Regulation. You may lodge a complaint with your local data protection authority. To exercise rights related to Google's data processing, visit <a href="https://myaccount.google.com/data-and-privacy" style="color:var(--gold);">myaccount.google.com/data-and-privacy</a>.</p>
+
+        <p style="margin-top:12px;"><strong style="color:var(--text-primary);">For California Residents (CCPA):</strong> You have the right to know about personal information collected, sold, or disclosed, the right to delete personal information, the right to opt out of the sale of personal information, and the right to non-discrimination for exercising your privacy rights. As stated in Section 6, we do not sell personal information.</p>
+    </section>
+
+    <!-- ── SECTION 9 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s9">
+        <div class="section-header">
+            <div class="section-num">9</div>
+            <h2>Security</h2>
+        </div>
+        <p>
+            HexLume Games takes the security of your information seriously. Since all game data is stored locally on your device and no data is transmitted to our servers, the primary security of your game data depends on your device's own security measures (screen lock, encryption, etc.).
+        </p>
+        <p>
+            Google AdMob employs industry-standard security measures for the advertising data it collects. However, no method of electronic transmission or storage is 100% secure. For any security concerns related to Google's services, please refer to Google's Security &amp; Privacy policies.
+        </p>
+        <p>
+            We encourage you to keep your Android operating system and the Jackpot Dice application updated to benefit from the latest security improvements.
+        </p>
+    </section>
+
+    <!-- ── SECTION 10 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s10">
+        <div class="section-header">
+            <div class="section-num">10</div>
+            <h2>Changes to This Privacy Policy</h2>
+        </div>
+        <p>
+            We may update this Privacy Policy from time to time to reflect changes in the application, applicable laws, or our business practices. When we make significant changes, we will update the <strong>"Last Updated"</strong> date at the top of this page and, where required by law, notify users through an in-app notice or via the Google Play Store listing.
+        </p>
+        <p>
+            We encourage you to review this Privacy Policy periodically. Continued use of Jackpot Dice after any changes to this policy constitutes your acceptance of the revised terms.
+        </p>
+        <p>
+            Previous versions of this Privacy Policy are available upon request by contacting us at the address provided below.
+        </p>
+    </section>
+
+    <!-- ── SECTION 11 ──────────────────────────────────────────────────── -->
+    <section class="section" id="s11">
+        <div class="section-header">
+            <div class="section-num">11</div>
+            <h2>Contact Us</h2>
+        </div>
+        <p>
+            If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please do not hesitate to reach out. We will respond to your inquiry as promptly as possible, and no later than <strong>30 days</strong> from the date of receipt (in compliance with GDPR requirements).
+        </p>
+
+        <div class="contact-box">
+            <div class="contact-icon">✉️</div>
+            <h3>HexLume Games</h3>
+            <p>Questions about privacy? We're here to help.</p>
+            <a href="mailto:hexlume.games@gmail.com" class="contact-email-btn">
+                📧 hexlume.games@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ──────────────────────────────────────────────────────── -->
+    <div class="divider"></div>
+    <footer class="footer">
+        <div class="footer-logo">🎲 HexLume Games</div>
+        <p>© 2026 HexLume Games. All rights reserved.</p>
+        <p style="margin-top:6px;">Jackpot Dice: Roll &amp; Score · com.hexlumegames.jackpotdice</p>
+        <p style="margin-top:6px;">This document was last reviewed on June 15, 2026.</p>
+    </footer>
+
+</div><!-- end .page-wrap -->
+
+</body>
+</html>
